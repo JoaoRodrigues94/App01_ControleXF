@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mod="clr-namespace:App01_ControleXF.Modelo"
+             x:Class="App01_ControleXF.Controles.ListViewPage">
+  <ContentPage.Content>
+    <StackLayout>
+      <ListView>
+        <ListView.ItemsSource>
+          <x:Array Type="{x:Type mod:Pessoa}">
+            <mod:Pessoa nome="João Rodrigues" idade="26"/>
+            <mod:Pessoa nome="Maria Saco" idade="18"/>
+            <mod:Pessoa nome="Arlindo Pinto" idade="52"/>
+            <mod:Pessoa nome="Tomaz Turbano" idade="35"/>
+            <mod:Pessoa nome="Selask de Costa Alves" idade="19"/>
+          </x:Array>
+        </ListView.ItemsSource>
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding nome}"/>
+                <Label Text=" - "/>
+                <Label Text="{Binding idade}"/>
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+
+      <BoxView HorizontalOptions="FillAndExpand" HeightRequest="5" Color="Red"/>
+      
+      <ListView x:Name="ListaPessoas">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout Margin="10" Orientation="Horizontal">
+                <Label Text="{Binding nome}"/>
+                <Label Text=" - "/>
+                <Label Text="{Binding idade}"/>
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>
